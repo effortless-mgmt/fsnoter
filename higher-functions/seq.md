@@ -1,4 +1,4 @@
-## Seq
+### Seq
 
 <https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/sequences>
 
