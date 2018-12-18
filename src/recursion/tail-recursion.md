@@ -52,7 +52,7 @@ let rec SumC xs f =
     match xs with
     | [] -> f 0
     | x::rest -> sumC rest (fun i -> f(x + i))
-val : int list -> (int -> 'a) -> (int -> 'a)
+val : int list -> (int -> 'a) -> 'a
 ```
 
 Here the computation is:
