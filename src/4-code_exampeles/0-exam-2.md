@@ -1,6 +1,5 @@
 ### Problem 2
 
-#### 2.1 Problem Definition
 
 Consider the following F# declarations:
 
@@ -20,6 +19,8 @@ let rec sum xs =
     | []      -> 0
     | x::rest -> x + sum rest;;
 ```
+
+#### 2.1 Problem Definition
 
 Give the values of `f 5` and `h (seq [1;2;3;4]) (fun i -> i+10)`. Furthermore, give the (most general) types for `f` and `h`, and describe what each of these two functions computes. Your description for each function should focus on what it computes, rather than on individual computation steps.
 
