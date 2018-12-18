@@ -1,4 +1,4 @@
-### Sequences (seq)
+## Sequences (seq)
 
 A _sequence expression_ is an expression that evaluates to a sequence. It can be used to create lists. The following code creates a list which ranges from 0 to 10.
 
