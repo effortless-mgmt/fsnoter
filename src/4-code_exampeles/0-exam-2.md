@@ -1,6 +1,5 @@
 ### Problem 2
 
-
 Consider the following F# declarations:
 
 ```fsharp
@@ -11,13 +10,17 @@ let rec f  = function
 and g = function
         | 0 -> []
         | n -> f(n-1);;
+val f : int -> int list
+val g : int -> int list
 
 let h s k = seq{for a in s do yield k a };;
+val : -> seq<'a> -> ('a -> 'b) -> seq<'b>
 
 let rec sum xs = 
     match xs with
     | []      -> 0
     | x::rest -> x + sum rest;;
+val : int list -> int
 ```
 
 #### 2.1 Problem Definition
@@ -56,12 +59,16 @@ The function sum is not tail recursive.
 
 ```fsharp
 // Tail recursion
-let rec sumT xs acc = match xs with 
-                      | []       -> acc
-                      | x::rest -> sumT rest (x+acc)
+let rec sumT xs acc = 
+    match xs with 
+    | []       -> acc
+    | x::rest -> sumT rest (x+acc)
+val : int list -> int -> int
 
 // Continuation-based tail recursion
-let rec sumC xs k = match xs with 
-                    | []      -> k 0
-                    | x::rest -> sumC rest (fun v -> k(x+v));;
+let rec sumC xs k = 
+    match xs with 
+    | []      -> k 0
+    | x::rest -> sumC rest (fun v -> k(x+v));;
+val : int list -> (int -> 'a) -> 'a
 ```

@@ -41,10 +41,12 @@ let rec merge (xs, ys) =
     match xs, ys with
     | ([], zs) | (zs, []) -> zs
     | x::xtail, y::ytail -> x::y::merge(xtail, ytail)
+val : 'a list * 'a list -> 'a list
 
 // alternative declaration for merge
 let rec merge1(xs,ys) = 
     match xs with 
     | []      -> ys
     | x::xrest -> x::merge1(ys,xrest);;  
+val : 'a list * 'a list -> 'a list
 ```
