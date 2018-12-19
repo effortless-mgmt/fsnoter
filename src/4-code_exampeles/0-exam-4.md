@@ -1,9 +1,9 @@
 ### Problem 4
 
-Consider the following F# declarations of a type `T<’a>` for binary trees having values of type `’a` in nodes, three functions `f`, `h` and `g`, and a binary tree `t`:
+Consider the following F# declarations of a type `T<'a>` for binary trees having values of type `'a` in nodes, three functions `f`, `h` and `g`, and a binary tree `t`:
 
 ```fsharp
-type T<’a> = L | N of T<’a> * ’a * T<’a>
+type T<'a> = L | N of T<'a> * 'a * T<'a>
 
 let rec f g t1 t2 =
       match (t1,t2) with
