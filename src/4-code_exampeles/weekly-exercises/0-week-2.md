@@ -71,10 +71,15 @@ let rec f' = function
     | (x, []) -> []
     | (x, y::ys) -> (x+y)::f'(x-1, ys)
 val : int * int list -> int list
+
+// f(x,[y0;y1;...;yn-1]),n>=0
 ```
-f(x,[y0,y1,...,yn−1]),n>=0
-The value is a list of integers being the result of the formula x+y where x is decreased by 1 for each recursion
+
+The value is a list of integers being the result of the formula `x+y` where `x `is decreased by 1 for each recursion
+
+```
 [(x+y0);(x-1+y1);...;(x-(n-1)+yn-1)]
+```
 
 #### Exercise 4.16b Solution
 
@@ -83,10 +88,14 @@ let rec g = function
     | [] -> []
     | (x,y)::s -> (x,y)::(y,x)::g s
 val : ('a * 'a) list -> ('a * 'a) list
+
+// g[(x0,y0);(x1,y1);...;(xn-1,yn-1)],n>=0
 ```
-g[(x0,y0),(x1,y1),...,(xn−1,yn−1)],n>=0
-The value is a list of pairs where each pair is followed by the same pair, but reversed
+The value is `a list` of pairs where each pair is followed by the same pair, but reversed
+
+```
 [(x0,y0);(y0,x0);(x1,y1);(y1,x1);...;(xn-1,yn-1);(yn-1,xn-1)]
+```
 
 #### Exercise 4.16c Solution
 
@@ -95,10 +104,14 @@ let rec h = function
     | [] -> []
     | x::xs -> x::(h xs)@[x]
 val : 'a list -> 'a list
+
+// h[x0;x1;...;xn-1],n>=0
 ```
-h[x0,x1,...,xn−1],n>=0
-The value is the list xs with a 'mirrored' (reversed) version of xs appended
+The value is the `list xs` with a 'mirrored' (reversed) version of `xs` appended 
+
+```
 [x0;x1;...;xn-1;xn-1;..;x1;x0]
+```
 
 #### Exercise 4.17 Solution
 
@@ -109,8 +122,10 @@ let rec p q = function
         let ys = p q xs
         if q x then x::ys else ys@[x]
 val : ('a -> bool) -> 'a list -> 'b list
+
+// p q [x0;x1;x2;...;xn-1]
 ```
-p q [x0;x1;x2;...;xn−1]
+
 The value will be a list containing the elements of xs that satisfies q in the front and elements that don't in the back
 
 #### Exercise 4.11a Solution
