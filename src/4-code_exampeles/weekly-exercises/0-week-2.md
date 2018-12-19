@@ -1,4 +1,3 @@
-## Weekly Exercises
 ### Week 2
 
 #### Exercise 2.1 Solution

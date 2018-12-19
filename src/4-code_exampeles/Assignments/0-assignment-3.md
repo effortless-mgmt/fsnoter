@@ -1,4 +1,3 @@
-## Assignments
 ### Assignment 3
 
 ```fsharp
